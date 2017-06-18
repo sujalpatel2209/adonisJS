@@ -1,0 +1,21 @@
+body {
+  background: #ffffff;
+}
+.container{
+    .header{
+        margin-bottom: 2rem;
+        padding: 1rem 0;
+        border-bottom: .05rem solid #e5e5e5;
+        h3{
+            margin-top: 0;
+            margin-bottom: 0;
+            line-height: 3rem;
+        }
+    }
+}
+
+@media (min-width: 48em) {
+  .container {
+    max-width: 46rem;
+  }
+}

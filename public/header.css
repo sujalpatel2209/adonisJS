@@ -1,0 +1,13 @@
+body {
+  background: #ffffff;
+}
+
+.container {
+  width: 100% !important;
+}
+
+.header {
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: .05rem solid #e5e5e5;
+}
