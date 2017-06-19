@@ -20,6 +20,6 @@ const Route = use('Route')
 // Route.on('/').render('welcome')
 
 
-Route.on('/').render('home');
+Route.get('/','PostController.index');
 Route.on('about').render('about');
 Route.on('contact').render('contact');
