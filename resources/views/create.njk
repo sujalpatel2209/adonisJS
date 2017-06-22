@@ -1,0 +1,23 @@
+{% extends 'layouts.master' %}
+{% block pagetitle %}
+    Create Post
+{% endblock %}
+{% block content %}
+{{ form.open({url: '/post/store'}) }}
+
+{{ csrfField }}
+
+<fieldset class="form-group">
+    {{ form.label('Title') }}
+    {{ form.text('title',null,{ class:'form-control' }) }}
+</fieldset>
+
+<fieldset class="form-group">
+    {{ form.label('Description') }}
+    {{ form.text('desc',null,{ class:'form-control' }) }}
+</fieldset>
+
+{{ form.submit('Publish', 'publish', { class:'btn btn-primary btn-block' }) }}
+
+{{ form.close() }}
+{% endblock %}

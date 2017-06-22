@@ -3,6 +3,7 @@
     Home
 {% endblock %}
 {% block content %}
+<a class="btn btn-success" href="/post/create">Create Post</a>
     {% for post in posts %}
         <h2>{{ post.title }}</h2>
             <p>
