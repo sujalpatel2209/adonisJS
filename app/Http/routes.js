@@ -23,5 +23,6 @@ const Route = use('Route')
 Route.get('/','PostController.index');
 Route.get('/post/create').render('create');
 Route.post('/post/store','PostController.store');
+Route.get('/post/show/:id','PostController.show');
 Route.on('about').render('about');
 Route.on('contact').render('contact');

@@ -1,0 +1,11 @@
+{% extends 'layouts.master' %}
+{% block pagetitle %}
+    Show/{{ post.id }}
+{% endblock %}
+{% block content %}
+<a href="/">Go Back</a>
+    <h2>{{ post.title }}</h2>
+    <p>
+        {{ post.content }}
+    </p>
+{% endblock %}

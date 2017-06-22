@@ -15,19 +15,33 @@ class PostController {
     }
 
     * store (request, response){
-        const postDetail = request.all();
+        const postDetail = request.only('title','content');
         const rules = {
             title: 'required',
-            desc: 'required'
+            content: 'required'
         }
 
         const validation = yield Validator.validate(postDetail,rules)
 
         if(validation.fails()){
-            
+            yield request
+            .withOnly('title', 'content')
+            .andWith({ errors: validation.messages() })
+            .flash() 
+
+            response.redirect('back')
+            return
         }
 
+        yield Post.create(postDetail);
+        response.redirect('/');
     }
+
+    * show (request, response){
+        const postData = yield Post.find(request.param('id'))
+        yield response.sendView('show', { post : postData.toJSON()} );
+    }
+
 }
 
 module.exports = PostController

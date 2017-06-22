@@ -3,6 +3,13 @@
     Create Post
 {% endblock %}
 {% block content %}
+{% if old('errors') %}
+  <div class="alert alert-danger">
+    {% for error in old('errors') %}
+      <li> {{ error.message }} </li>
+    {% endfor %}
+  </div>
+{% endif %}
 {{ form.open({url: '/post/store'}) }}
 
 {{ csrfField }}
@@ -14,7 +21,7 @@
 
 <fieldset class="form-group">
     {{ form.label('Description') }}
-    {{ form.text('desc',null,{ class:'form-control' }) }}
+    {{ form.text('content',null,{ class:'form-control' }) }}
 </fieldset>
 
 {{ form.submit('Publish', 'publish', { class:'btn btn-primary btn-block' }) }}
