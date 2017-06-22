@@ -21,10 +21,9 @@ const Factory = use('Factory')
 | this blueprint inside your seeds to generate dummy data.
 |
 */
-Factory.blueprint('App/Model/User', (fake) => {
+Factory.blueprint('App/Model/Post', (fake) => {
   return {
-    username: fake.username(),
-    email: fake.email(),
-    password: fake.password()
+    title: fake.sentence(),
+    content: fake.paragraph()
   }
 })
